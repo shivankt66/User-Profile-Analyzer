@@ -10,7 +10,7 @@ Built with **React**, **TypeScript**, **ShadCN UI**, **Bootstrap**, and **Rechar
 ---
 
 ## 🚀 Demo
-> 🌐 [Live Demo Link](https://symphonious-gnome-5f77aa.netlify.app/)
+> 🌐 [Live Demo Link](https://user-profile-analyzer-git.netlify.app/)
 
 ---
 
