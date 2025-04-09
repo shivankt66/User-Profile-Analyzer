@@ -10,7 +10,7 @@ Built with **React**, **TypeScript**, **ShadCN UI**, **Bootstrap**, and **Rechar
 ---
 
 ## 🚀 Demo
-> 🌐 [Live Demo Link](https://your-deployment-url.vercel.app)
+> 🌐 [Live Demo Link](https://symphonious-gnome-5f77aa.netlify.app/)
 
 ---
 
