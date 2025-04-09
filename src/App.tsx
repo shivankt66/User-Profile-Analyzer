@@ -59,6 +59,9 @@ function App() {
           placeholder="Enter GitHub username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') fetchUserData();
+          }}
         />
         <button className="btn btn-primary" onClick={fetchUserData} >Analyze</button>
       </div>
