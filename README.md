@@ -12,6 +12,7 @@ Built with **React**, **TypeScript**, **ShadCN UI**, **Bootstrap**, and **Rechar
 ## 🚀 Demo
 > 🌐 [Live Demo Link](https://your-deployment-url.vercel.app)
 
+---
 
 ## 🛠️ Tech Stack
 
