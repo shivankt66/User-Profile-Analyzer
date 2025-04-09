@@ -16,14 +16,12 @@ const CommitsChart: React.FC<CommitsChartProps> = ({ data }) => {
   const fullDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   const today = new Date().getDay();
-  console.log(today);
 
   const rotatedDays = [...fullDays.slice(today + 1), ...fullDays.slice(0, today + 1)];
-  console.log(rotatedDays);
 
   const chartData = rotatedDays.map((day, i) => ({
     day,
-    commits: data[(i + today + 1) % 7], // realign the data too
+    commits: data[(i + today + 1) % 7],
   }));
 
   return (

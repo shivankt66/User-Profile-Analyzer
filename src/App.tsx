@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import RepoList from './components/RepoList';
 import CommitsChart from './components/commitsChart';
+import { Input } from './components/ui/Input';
+import { Button } from './components/ui/Button';
 
 
 function App() {
@@ -21,7 +23,6 @@ function App() {
       if(!res.ok) throw new Error('User not found');
       const data = await res.json();
       setRepos(data);
-      console.log(data);
 
       const commitPromises = data.slice(0,3).map(async (repo:any) => {
         const r = await fetch(`https://api.github.com/repos/${username}/${repo.name}/stats/commit_activity`);
@@ -40,7 +41,6 @@ function App() {
         });
       });
       setCommitData(dailyTotal);
-      console.log(dailyTotal);
     } catch (err:any) {
       setError(err.message);
     }
@@ -53,17 +53,14 @@ function App() {
     <div className="container py-5">
       <h1 className="mb-4">GitHub User Profile Analyzer</h1>
       <div className="input-group mb-3">
-        <input
+      <Input
           type="text"
-          className="form-control"
           placeholder="Enter GitHub username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') fetchUserData();
-          }}
+          onKeyDown={(e) => e.key === 'Enter' && fetchUserData()}
         />
-        <button className="btn btn-primary" onClick={fetchUserData} >Analyze</button>
+        <Button onClick={fetchUserData}>Analyze</Button>
       </div>
       {loading && <p>Loading...</p>}
       {error && <p className="text-danger">{error}</p>}
